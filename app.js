@@ -6,6 +6,7 @@ const port = process.env.PORT || 3000;
 const chatEmitter = new EventEmitter();
 
 
+
 function respondText(req, res) {
     res.setHeader('Content-Type', 'text/plain');
     res.end('hi');
@@ -15,6 +16,7 @@ function respondJson(req, res) {
     res.setHeader('Content-Type', 'application/json');
     res.end(JSON.stringify({ text: 'hi', numbers: [1, 2, 3] }));
 }
+
 
 function respondNotFound(req, res) {
     res.writeHead(404, { 'Content-Type': 'text/plain' });
