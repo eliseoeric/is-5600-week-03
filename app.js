@@ -4,6 +4,8 @@ const EventEmitter = require('events');
 const chatEmitter = new EventEmitter();
 const port = process.env.PORT || 3000;
 const app = express();
+// add this line just after we declare the express app
+app.use(express.static(__dirname + '/public'));
 
 /**
  * Responds with plain text
@@ -62,8 +64,7 @@ function chatApp(req, res) {
 }
 
 
-// add this line just after we declare the express app
-app.use(express.static(__dirname + '/public'));
+
 
 
 function respondChat (req, res) {
@@ -89,8 +90,8 @@ function respondSSE (req, res) {
   });
 }
 
-app.get('/json', respondJson);
-app.get('/echo', respondEcho);
+// app.get('/json', respondJson);
+// app.get('/echo', respondEcho);
 app.get('/sse', respondSSE);
 
 // register the endpoint with the app (make sure to remove the old binding to the `/` route)
