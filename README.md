@@ -323,19 +323,8 @@ Now our app should be receiving messages via the `/chat` endpoint. We are not br
  */
 app.get('/sse', respondSSE);
 
-function respondSSE (req, res) {
-  res.writeHead(200, {
-    'Content-Type': 'text/event-stream',
-    'Connection': 'keep-alive',
-  });
 
-  const onMessage = message => res.write(`data: ${message}\n\n`); // use res.write to keep the connection open, so the client is listening for new messages
-  chatEmitter.on('message', onMessage);
 
-  res.on('close', () => {
-    chatEmitter.off('message', onMessage);
-  });
-}
 ```
 
 
