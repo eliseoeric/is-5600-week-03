@@ -10,3 +10,5 @@ new window.EventSource("/sse").onmessage = function(event) {
     window.fetch(`/chat?message=${window.input.value}`);
     window.input.value = '';
   });
+
+  
