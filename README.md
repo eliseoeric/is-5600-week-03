@@ -53,9 +53,12 @@ If you open the web view and navigate to the URL, you should see the "hi" messag
 // modify the server code to look like this
 const server = http.createServer(function(request, response) {
   response.setHeader('Content-Type', 'application/json');
-  response.end(JSON.stringify({ text: 'hi', number: [1, 2, 3] }));
+  response.end(JSON.stringify({ text: 'hi', number: [1, 2, 3]
+
+   }
+   ));
 });
-```
+`
 
 Refresh your lab browser, you should see the JSON string returned in the browser.
 
