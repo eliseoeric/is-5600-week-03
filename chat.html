@@ -1,18 +1,25 @@
-<!DOCTYPE html>
+<!Doctype html>
 <html lang="en">
-  <title>Chat App</title>
-  <link rel="stylesheet" href="/tachyons.min.css">
-  <link rel="stylesheet" href="/chat.css">
-  <body>
-    <div id="messages">
-      <h4>Chat Messages</h4>
-    </div>
-    <form id="form">
-      <input
-      id="input"
-      type="text"
-      placeholder="Your message...">
-      </form>
-    <script src='/chat.js'></script>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <title>Simple Chat</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 2rem; }
+    h1 { margin-bottom: 0.5rem; }
+    #messages { border: 1px solid #ccc; padding: 1rem; min-height: 200px; }
+    form { margin-top: 1rem; display: flex; gap: 0.5rem; }
+    input { flex: 1; padding: 0.5rem; }
+    button { padding: 0.5rem 1rem; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h1>Chat</h1>
+  <div id="messages"></div>
+  <form id="form">
+    <input id="input" placeholder="Type a message…" autocomplete="off" />
+    <button type="submit">Send</button>
+  </form>
+  <script src="/chat.js"></script>
+</body>
 </html>
