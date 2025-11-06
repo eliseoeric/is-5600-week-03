@@ -1,18 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-  <title>Chat App</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colorful Chat App</title>
+
+  <!-- Tachyons CSS -->
   <link rel="stylesheet" href="/tachyons.min.css">
+  <!-- Your custom chat styles -->
   <link rel="stylesheet" href="/chat.css">
-  <body>
+
+  <style>
+    /* 💫 Extra styling on top of Tachyons */
+    body {
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      font-family: 'Avenir Next', Avenir, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      color: #fff;
+    }
+
+    .chat-box {
+      background: #ffffff;
+      color: #333;
+      border-radius: 15px;
+      width: 420px;
+      max-width: 90%;
+      height: 85vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 0.6s ease-in-out;
+    }
+
+    .chat-header {
+      background: linear-gradient(90deg, #ff8a00, #e52e71);
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      font-weight: 600;
+      font-size: 1.2rem;
+      letter-spacing: 0.5px;
+    }
+
+    #messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 1rem;
+      background: #f8f9fb;
+    }
+
+    #messages h4 {
+      color: #555;
+      text-align: center;
+      margin-top: 0.5rem;
+      font-weight: 500;
+    }
+
+    form {
+      display: flex;
+      padding: 0.5rem;
+      border-top: 1px solid #ddd;
+      background: #fff;
+    }
+
+    input {
+      flex: 1;
+      padding: 0.8rem;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    input:focus {
+      border-color: #6a11cb;
+      box-shadow: 0 0 0 2px rgba(106, 17, 203, 0.15);
+    }
+
+    button {
+      margin-left: 0.5rem;
+      background: linear-gradient(90deg, #6a11cb, #2575fc);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 0.8rem 1.2rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      background: linear-gradient(90deg, #2575fc, #6a11cb);
+      transform: translateY(-1px);
+    }
+
+    /* Subtle animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    #messages::-webkit-scrollbar {
+      width: 6px;
+    }
+    #messages::-webkit-scrollbar-thumb {
+      background: #c5cae9;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="chat-box">
+    <div class="chat-header">
+      💬 Simple Chat App
+    </div>
     <div id="messages">
       <h4>Chat Messages</h4>
     </div>
     <form id="form">
-      <input
-      id="input"
-      type="text"
-      placeholder="Your message...">
-      </form>
-    <script src='/chat.js'></script>
-  </body>
+      <input id="input" type="text" placeholder="Type your message..." required />
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+  <script src="/chat.js"></script>
+</body>
 </html>
