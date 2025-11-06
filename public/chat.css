@@ -1,18 +1,38 @@
 :root {
   --spacing-medium: 1rem;
   --spacing-small: 0.5rem;
+
+  --bg-color: linear-gradient(135deg, #2193b0, #6dd5ed);
+  --text-color: #fff;
+  --input-bg: #e3f2fd;
+  --input-border: #90caf9;
+  --input-focus: #2196f3;
 }
 
 body {
-  font-family: 'avenir next', avenir, sans-serif;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-  height:100vh;
-  padding:var(--spacing-medium);
+  font-family: 'Avenir Next', Avenir, sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  padding: var(--spacing-medium);
 }
 
 input {
   width: 100%;
-  padding:var(--spacing-small);
+  padding: var(--spacing-small);
+  border-radius: 8px;
+  border: 1px solid var(--input-border);
+  background: var(--input-bg);
+  color: #003366;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s;
+}
+
+input:focus {
+  border-color: var(--input-focus);
+  box-shadow: 0 0 0 3px rgba(33, 147, 176, 0.25);
 }
