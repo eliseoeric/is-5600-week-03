@@ -1,18 +1,32 @@
-:root {
-  --spacing-medium: 1rem;
-  --spacing-small: 0.5rem;
-}
-
-body {
-  font-family: 'avenir next', avenir, sans-serif;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-  height:100vh;
-  padding:var(--spacing-medium);
-}
-
-input {
-  width: 100%;
-  padding:var(--spacing-small);
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Ocean Mist Chat</title>
+  <style>
+    body {
+      font-family:'Avenir Next',sans-serif;
+      background:linear-gradient(135deg,#43cea2,#185a9d);
+      margin:0; height:100vh;
+      display:flex; justify-content:center; align-items:center;
+    }
+    .chat-box {background:#fff;width:400px;height:85vh;border-radius:12px;overflow:hidden;
+      display:flex;flex-direction:column;box-shadow:0 6px 20px rgba(0,0,0,0.1);}
+    .chat-header{background:#185a9d;color:#fff;text-align:center;padding:10px;font-weight:600;}
+    #messages{flex:1;padding:10px;background:#f1faff;overflow-y:auto;}
+    form{display:flex;padding:8px;background:#fff;border-top:1px solid #ddd;}
+    input{flex:1;padding:8px;border:1px solid #90caf9;border-radius:8px;}
+    button{margin-left:5px;background:#43cea2;color:#fff;border:none;border-radius:8px;padding:8px 12px;cursor:pointer;}
+  </style>
+</head>
+<body>
+  <div class="chat-box">
+    <div class="chat-header">Live Chat</div>
+    <div id="messages"></div>
+    <form id="form">
+      <input id="input" type="text" placeholder="Type a message..." />
+      <button type="submit">Send</button>
+    </form>
+  </div>
+  <script src="/chat.js"></script>
+</body>
+</html>
