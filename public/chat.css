@@ -4,15 +4,61 @@
 }
 
 body {
-  font-family: 'avenir next', avenir, sans-serif;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-  height:100vh;
-  padding:var(--spacing-medium);
+  font-family: 'Avenir Next', Avenir, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: #f9f9f9;
+}
+
+#chat-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px;
+  height: 80vh;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+  padding: var(--spacing-medium);
+}
+
+#messages {
+  flex-grow: 1;
+  overflow-y: auto;
+  margin-bottom: var(--spacing-medium);
+}
+
+#messages p {
+  background: #f4f4f4;
+  padding: var(--spacing-small);
+  border-radius: 6px;
+  margin: 0.25rem 0;
+}
+
+form {
+  display: flex;
+  gap: var(--spacing-small);
 }
 
 input {
-  width: 100%;
-  padding:var(--spacing-small);
+  flex-grow: 1;
+  padding: var(--spacing-small);
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+button {
+  padding: var(--spacing-small) var(--spacing-medium);
+  background: #007aff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #005ecc;
 }
