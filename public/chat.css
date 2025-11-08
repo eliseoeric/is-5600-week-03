@@ -1,18 +1,48 @@
-:root {
-  --spacing-medium: 1rem;
-  --spacing-small: 0.5rem;
+/* Minimal, readable styling without getting fancy */
+#me {
+  font: 13px/1.2 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: #f6f7fb;
+  border-bottom: 1px solid #eaecef;
+  padding: 8px 12px;
+  color: #444;
 }
 
-body {
-  font-family: 'avenir next', avenir, sans-serif;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-  height:100vh;
-  padding:var(--spacing-medium);
+#messages {
+  max-height: 70vh;
+  overflow-y: auto;
+  padding: 12px;
 }
 
-input {
-  width: 100%;
-  padding:var(--spacing-small);
+.msg {
+  margin: 10px 0;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 0 0 1px #eee;
+  max-width: 560px;
+}
+
+.msg.mine {
+  background: #eef2ff;
+  margin-left: auto;
+}
+
+.msg.sys {
+  box-shadow: none;
+  background: transparent;
+  color: #666;
+  font-size: 13px;
+  padding: 0;
+}
+
+.msg .meta {
+  color: #666;
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+.msg .text {
+  color: #111;
+  font-size: 15px;
+  word-wrap: break-word;
 }
