@@ -1,0 +1,11 @@
+// Minimal client per lab: subscribe to SSE and send via fetch
+
+new window.EventSource('/sse').onmessage = function (event) {
+  window.messages.innerHTML += `<p>${event.data}</p>`;
+};
+
+window.form.addEventListener('submit', function (event) {
+  event.preventDefault();
+  window.fetch(`/chat?message=${encodeURIComponent(window.input.value)}`);
+  window.input.value = '';
+});
