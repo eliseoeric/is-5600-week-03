@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+  <meta charset="utf-8" />
   <title>Chat App</title>
-  <link rel="stylesheet" href="/tachyons.min.css">
+  <!-- Tachyons CDN optional -->
+  <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css">
   <link rel="stylesheet" href="/chat.css">
-  <body>
-    <div id="messages">
-      <h4>Chat Messages</h4>
-    </div>
-    <form id="form">
-      <input
-      id="input"
-      type="text"
-      placeholder="Your message...">
-      </form>
-    <script src='/chat.js'></script>
-  </body>
+</head>
+<body>
+  <div id="messages">
+    <h4>Chat Messages</h4>
+  </div>
+  <form id="form">
+    <input id="input" type="text" placeholder="Your message..." autocomplete="off" />
+    <button type="submit">Send</button>
+  </form>
+  <script src='/chat.js'></script>
+</body>
 </html>

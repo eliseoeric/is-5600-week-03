@@ -1,18 +1,18 @@
 {
-  "name": "nodejs",
+  "name": "node-chat-lab",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Simple Node/Express chat lab",
+  "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "@types/node": "^18.0.6",
-    "node-fetch": "^3.2.6",
-    "nodemon": "^3.1.0"
-  }
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  },
+  "author": "",
+  "license": "ISC"
 }
