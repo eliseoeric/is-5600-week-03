@@ -1,18 +1,25 @@
 {
-  "name": "nodejs",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "node-api-lab03",
+  "version": "1.0.1",
+  "description": "A simple Node.js API built for Lab 3 exercises",
+  "main": "server.js",
+  "type": "commonjs",
   "scripts": {
-    "start": "nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "serve": "node server.js",
+    "dev": "nodemon server.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "nodejs",
+    "express",
+    "lab03",
+    "api"
+  ],
+  "author": "Sharan Botta",
+  "license": "MIT",
   "dependencies": {
-    "@types/node": "^18.0.6",
-    "node-fetch": "^3.2.6",
-    "nodemon": "^3.1.0"
+    "express": "~4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "~3.0.3"
   }
 }
