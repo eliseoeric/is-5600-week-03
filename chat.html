@@ -1,18 +1,29 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <title>Chat App</title>
-  <link rel="stylesheet" href="/tachyons.min.css">
-  <link rel="stylesheet" href="/chat.css">
-  <body>
-    <div id="messages">
-      <h4>Chat Messages</h4>
-    </div>
-    <form id="form">
-      <input
-      id="input"
-      type="text"
-      placeholder="Your message...">
-      </form>
-    <script src='/chat.js'></script>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <title>Mini Chat (SSE)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+    body { margin: 2rem; }
+    #messages { border: 1px solid #ddd; padding: 1rem; border-radius: 8px; min-height: 200px; max-height: 50vh; overflow:auto; }
+    form { margin-top: 1rem; display: flex; gap: .5rem; }
+    input[type="text"] { flex: 1; padding: .6rem; border: 1px solid #ccc; border-radius: 6px; }
+    button { padding: .6rem 1rem; border: none; border-radius: 6px; background: #111; color: #fff; cursor: pointer; }
+    button:hover { opacity: .9; }
+  </style>
+</head>
+<body>
+  <h1>Mini Chat</h1>
+
+  <div id="messages" aria-live="polite"></div>
+
+  <form id="form">
+    <input id="input" type="text" placeholder="Type a message…" autocomplete="off" />
+    <button type="submit">Send</button>
+  </form>
+
+  <script src="/chat.js"></script>
+</body>
 </html>
