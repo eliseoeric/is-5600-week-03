@@ -16,3 +16,48 @@ input {
   width: 100%;
   padding:var(--spacing-small);
 }
+root {
+  --spacing-medium: 1rem;
+  --spacing-small: 0.5rem;
+
+  --bg-color: linear-gradient(135deg, #ff9966, #ff5e62);
+  --text-color: #fff;
+  --input-bg: #fff7f5;
+  --input-border: #ff8a66;
+  --input-focus: #ff5e62;
+}
+
+body {
+  font-family: 'avenir next', avenir, sans-serif;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  height:100vh;
+  padding:var(--spacing-medium);
+  font-family: 'Avenir Next', Avenir, sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  padding: var(--spacing-medium);
+}
+
+input {
+  width: 100%;
+  padding:var(--spacing-small);
+  padding: var(--spacing-small);
+  border-radius: 8px;
+  border: 1px solid var(--input-border);
+  background: var(--input-bg);
+  color: #333;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s;
+}
+
+input:focus {
+  border-color: var(--input-focus);
+  box-shadow: 0 0 0 3px rgba(255, 94, 98, 0.2);
+}
