@@ -5,14 +5,14 @@
 
 body {
   font-family: 'avenir next', avenir, sans-serif;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-  height:100vh;
-  padding:var(--spacing-medium);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  padding: var(--spacing-medium);
 }
 
 input {
   width: 100%;
-  padding:var(--spacing-small);
+  padding: var(--spacing-small);
 }
