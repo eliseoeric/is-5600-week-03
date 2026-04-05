@@ -1,68 +1,29 @@
-// app.js
-// Lab 03 – Node API with Express (Full start-to-end example)
+const express = require('express');
+const app = express();
+const PORT = 3000;
 
-const express = require('express'); // Import Express
-const app = express();               // Create Express app
-
-const PORT = 3000;                   // Server port
-
-// Middleware
-// Parse incoming JSON in POST requests
 app.use(express.json());
 
-// ===== ROUTES =====
-
-// Home route
+// Basic route
 app.get('/', (req, res) => {
-  res.json({ message: 'Welcome to the API!' });
+  res.json({ message: 'Hello, world with Express!' });
 });
 
-// About route
-app.get('/about', (req, res) => {
-  res.json({ message: 'About this API' });
-});
-
-// ===== In-memory chat storage =====
+// Simple chat route
 let messages = [];
 
-// Get all chat messages
 app.get('/messages', (req, res) => {
   res.json(messages);
 });
 
-// Add a new chat message
 app.post('/messages', (req, res) => {
-  const { message } = req.body;
-
-  // Validate input
-  if (!message) {
-    return res.status(400).json({ error: 'Message is required' });
+  const { user, text } = req.body;
+  if (!user || !text) {
+    return res.status(400).json({ error: 'User and text are required' });
   }
-
-  // Create message object
-  const newMessage = {
-    id: messages.length + 1,
-    text: message,
-    timestamp: new Date()
-  };
-
-  messages.push(newMessage); // Save message
-
-  res.status(201).json(newMessage);
+  const message = { user, text, timestamp: new Date() };
+  messages.push(message);
+  res.status(201).json(message);
 });
 
-// Delete all messages (optional)
-app.delete('/messages', (req, res) => {
-  messages = [];
-  res.json({ message: 'All messages deleted' });
-});
-
-// ===== 404 Handler =====
-app.use((req, res) => {
-  res.status(404).json({ error: 'Route not found' });
-});
-
-// ===== START SERVER =====
-app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
-});
+app.listen(PORT, () => console.log(`Express server running on port ${PORT}`));
