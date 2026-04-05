@@ -1,7 +1,7 @@
 {
   "name": "nodejs",
   "version": "1.0.0",
-  "description": "",
+  "description": "1. [Lab 03 | Node API](#lab-03--node-api)    - [Overview](#overview)    - [Instructions](#instructions) 2. [Guidance and Testing](#guidance-and-testing) 3. [Submission](#submission) 4. [Getting Started with GitHub and Codespaces](#getting-started-with-github-and-codespaces)    - [Step 1: Fork the Repository](#step-1-fork-the-repository)    - [Step 2: Open the Repository in Codespaces](#step-2-open-the-repository-in-codespaces)    - [Step 3: Complete the Lab Assignment](#step-3-complete-the-lab-assignment)    - [Step 4: Submit Your Work via Pull Request](#step-4-submit-your-work-via-pull-request)",
   "main": "index.js",
   "scripts": {
     "start": "nodemon app.js",
@@ -12,7 +12,16 @@
   "license": "ISC",
   "dependencies": {
     "@types/node": "^18.0.6",
+    "express": "^5.2.1",
     "node-fetch": "^3.2.6",
     "nodemon": "^3.1.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Erronblackz/is-5600-week-03.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Erronblackz/is-5600-week-03/issues"
+  },
+  "homepage": "https://github.com/Erronblackz/is-5600-week-03#readme"
 }
