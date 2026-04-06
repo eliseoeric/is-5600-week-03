@@ -1,18 +1,27 @@
 {
-  "name": "nodejs",
+  "name": "is-5600-week-03",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "NodeJS API Lab",
+  "main": "server.js",
   "scripts": {
-    "start": "nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "start:express": "node server-express.js",
+    "start:chat": "node chat-app.js",
+    "dev": "nodemon server.js"
   },
-  "keywords": [],
+  "keywords": [
+    "nodejs",
+    "express",
+    "api",
+    "chat"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@types/node": "^18.0.6",
-    "node-fetch": "^3.2.6",
-    "nodemon": "^3.1.0"
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
   }
 }
