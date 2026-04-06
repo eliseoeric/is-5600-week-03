@@ -1,18 +1,16 @@
 {
-  "name": "nodejs",
+  "name": "is-5600-week-03-final",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Lab 3 Node API",
+  "main": "http-server.js",
   "scripts": {
-    "start": "nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start:http": "node http-server.js",
+    "start:express": "node express-server.js"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@types/node": "^18.0.6",
-    "node-fetch": "^3.2.6",
-    "nodemon": "^3.1.0"
-  }
+    "express": "^5.2.1"
+  },
+  "keywords": []
 }
