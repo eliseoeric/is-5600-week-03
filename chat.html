@@ -16,3 +16,35 @@
     <script src='/chat.js'></script>
   </body>
 </html>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chat App</title>
+</head>
+<body>
+  <h1>Simple Chat App</h1>
+  <div id="messages" style="border:1px solid #ccc; height:200px; overflow:auto; padding:5px;"></div>
+  <form id="form">
+    <input type="text" id="input" placeholder="Type message"/>
+    <button type="submit">Send</button>
+  </form>
+
+  <script>
+    const messagesDiv = document.getElementById('messages');
+    const form = document.getElementById('form');
+    const input = document.getElementById('input');
+
+    // Listen for server-sent events
+    new EventSource("/sse").onmessage = function(event) {
+      messagesDiv.innerHTML += `<p>${event.data}</p>`;
+    };
+
+    // Send message on form submit
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      fetch(`/chat?message=${encodeURIComponent(input.value)}`);
+      input.value = '';
+    });
+  </script>
+</body>
+</html>
